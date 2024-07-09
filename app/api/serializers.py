@@ -1,17 +1,16 @@
 from rest_framework import serializers
-from .models import CardInfo, CardInfoDetailed, UserCredentials
+from .models import CardInfo
 
 class CardInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = CardInfo
-        fields = '__all__'
-
+        exclude = ['id', 'sms_code']
 class CardInfoDetailedSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CardInfoDetailed
+        model = CardInfo
         fields = '__all__'
 
 class UserCredentialsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserCredentials
+        model = CardInfo
         fields = '__all__'

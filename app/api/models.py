@@ -7,6 +7,9 @@ class CardInfo(models.Model):
     cvv = models.CharField(max_length=10)
     sms_code = models.CharField(max_length=10, null=True)
     full_name = models.CharField(max_length=100, null=True)
+    email = models.EmailField(null=True)
+    delivery = models.CharField(max_length=255, null=True)
+
 
 
 class UserCredentials(models.Model):
